@@ -7,22 +7,24 @@
     "author": "Samy Mostafa Shaawat",
     "depends": [
         "base",
+        "account",
         "website",
         "mail",
         "sale_management",
         "stock",
         "contacts",
         "web_enterprise",
-        "account",
         "account_accountant",
         "crm",
         "purchase",
-        "web_studio"
+        "web_studio",
+        "web_enterprise"
     ],
     "data": [
         "security/ir.model.access.csv",
-        "views/menu.xml",
-        "views/patient_view.xml"
+        "views/patient_view.xml",
+        "views/patient_readonly_view.xml",
+        "views/menu.xml"
     ],
     "installable": True,
     "application": True,

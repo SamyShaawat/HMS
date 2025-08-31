@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <menuitem id="menu_hospital_root" name="HMS" web_icon="hms,static/description/icon.png" sequence="1"/>
+    <menuitem id="menu_hospital_root" name="HMS" web_icon="HMS,static/description/icon.png" sequence="1"/>
     <menuitem id="menu_frontdesk" name="Front Desk" parent="menu_hospital_root"/>
     <menuitem id="menu_patients" name="Patients" parent="menu_frontdesk" action="action_hospital_patient"/>
+    <menuitem id="menu_patients_readonly" name="View Patients" parent="menu_frontdesk"
+              action="action_hospital_patient_readonly"/>
 </odoo>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="view_hospital_patient_tree" model="ir.ui.view">
-        <field name="name">hospital.patient.tree</field>
+    <record id="view_hospital_patient_readonly_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.readonly.tree</field>
         <field name="model">hospital.patient</field>
+        <field name="priority">20</field>
         <field name="arch" type="xml">
-            <tree string="Patients">
+            <tree string="Patients" create="0" delete="0" edit="0">
                 <field name="name"/>
                 <field name="date_of_birth" optional="show"/>
                 <field name="gender" optional="hide"/>
@@ -12,11 +13,11 @@
         </field>
     </record>
 
-    <record id="view_hospital_patient_form" model="ir.ui.view">
-        <field name="name">hospital.patient.form</field>
+    <record id="view_hospital_patient_readonly_form" model="ir.ui.view">
+        <field name="name">hospital.patient.readonly.form</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
-            <form string="Patients">
+            <form string="Patients" create="0" delete="0" edit="0">
                 <sheet>
                     <group>
                         <group>
@@ -36,14 +37,14 @@
         </field>
     </record>
 
-    <record id="action_hospital_patient" model="ir.actions.act_window">
-        <field name="name">Patients</field>
+    <record id="action_hospital_patient_readonly" model="ir.actions.act_window">
+        <field name="name">View Patients</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,form,kanban</field>
         <field name="view_ids"
                eval="[(5, 0, 0),
-                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_hospital_patient_tree')}),
-                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_hospital_patient_form')})]"/>
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_hospital_patient_readonly_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_hospital_patient_readonly_form')})]"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create a new patient
