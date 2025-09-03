@@ -5,4 +5,5 @@
     <menuitem id="menu_patients" name="Patients" parent="menu_frontdesk" action="action_hospital_patient"/>
     <menuitem id="menu_patients_readonly" name="View Patients" parent="menu_frontdesk"
               action="action_hospital_patient_readonly"/>
+    <menuitem id="menu_appointments" name="Appointments" parent="menu_frontdesk" action="action_hospital_appointment"/>
 </odoo>
