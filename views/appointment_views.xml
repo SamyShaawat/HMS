@@ -18,6 +18,18 @@
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
             <form string="Appointments">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" invisible="state != 'draft'"
+                            class="oe_highlight"/>
+                    <button name="action_ongoing" type="object" string="Ongoing" invisible="state != 'confirmed'"
+                            class="oe_highlight"/>
+                    <button name="action_done" type="object" string="Done" invisible="state != 'ongoing'"
+                            class="oe_highlight"/>
+                    <button name="action_reset_to_draft" type="object" string="Reset" invisible="state == 'draft'"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state == 'done'"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"
+                           statusbar_visible="draft,confirmed,ongoing,done"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
